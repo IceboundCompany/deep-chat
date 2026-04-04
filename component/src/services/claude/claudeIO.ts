@@ -96,7 +96,7 @@ export class ClaudeIO extends DirectServiceIO {
     } else if (result.type === 'content_block_delta' && result.delta?.type === 'input_json_delta') {
       this._streamToolCalls.input += result.delta.partial_json || '';
     } else if (result.type === 'message_delta' && result.delta?.stop_reason === 'tool_use') {
-      this._streamToolCalls.input = JSON.parse(this._streamToolCalls.input);
+      this._streamToolCalls.input = this._streamToolCalls.input ? JSON.parse(this._streamToolCalls.input) : {};
       return this.handleTools([this._streamToolCalls], prevBody);
     }
 
