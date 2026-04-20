@@ -1,6 +1,6 @@
 <br />
 
-![Deep Chat](https://github.com/user-attachments/assets/1e60ad6f-7825-40d7-8b1a-f7bb52e6fbff)
+![Deep Chat](https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/assets/readme/banner-2.png)
 
 <b>Deep Chat</b> is a fully customizable AI chat component that can be injected into your website with just _one line of code_. Whether you want to create a chatbot that leverages popular APIs such as ChatGPT or connect to your own custom service, this component can do it all! Explore [deepchat.dev](https://deepchat.dev/) to view all of the available features, how to use them, examples and more!
 
@@ -24,63 +24,13 @@
 - Focus mode to only display the latest messages
 - Everything is customizable!
 
-### :tada: Latest Updates
-
-Deep Chat version `2.4.0` brings a ton of new features into the Deep Chat ecosystem:
-
-- New [`scrollButton`](https://deepchat.dev/docs/messages/#scrollButton) and [`hiddenMessages`](https://deepchat.dev/docs/messages/#hiddenMessages) components used to enhance UX in long conversations!
-- [`upwardsMode`](https://deepchat.dev/docs/modes#upwardsMode) can be used to populate messages upwards.
-- [`directConnection`](https://deepchat.dev/docs/directConnection) now supports [`Open WebUI`](https://docs.openwebui.com/).
-- [`browserStoarage`](https://deepchat.dev/docs/messages/#browserStorage) can now store `inputText` and `scrollHeight` values for better session recovery experience.
-- See [release notes](https://github.com/OvidijusParsiunas/deep-chat/releases/tag/2.4.0) for more!
-
-<p align="center">
-    <img width="960" src="https://github.com/user-attachments/assets/5b0ef318-8e76-46bd-a3fa-62281a2afc80" alt="version 2.4.0">
-</p>
-
-`2.3.0` update:
-
-- [`directConnection`](https://deepchat.dev/docs/directConnection) now supports more than 20 AI APIs!
-- [`htmlWrappers`](https://deepchat.dev/docs/messages/#browserStorage) can now be used to standardize custom styling for all messages.
-- You can now use custom plugins for [remarkable](https://deepchat.dev/docs/messages/styles#remarkable) such as [Katex](https://katex.org/).
-- Change the loading bubble style via the `toggle` function in [`displayLoadingBubble`](https://deepchat.dev/docs/messages/#displayLoadingBubble).
-- See [release notes](https://github.com/OvidijusParsiunas/deep-chat/releases/tag/2.3.0) for more!
-
-<p align="center">
-    <img width="960" src="https://github.com/user-attachments/assets/e4202e3d-d740-4218-aa46-769622b519a7" alt="version 2.3.0">
-</p>
-
-`2.2.2` update:
-
-- [`browserStorage`](https://deepchat.dev/docs/messages/#browserStorage) allows you to store messages locally on your browser without worrying about a backend message integration.
-- Button [tooltips](https://deepchat.dev/docs/styles/buttons#Tooltip).
-- Place your streamed messages inside custom [`htmlWrappers`](https://deepchat.dev/docs/messages/HTML#htmlWrappers).
-- See [release notes](https://github.com/OvidijusParsiunas/deep-chat/releases/tag/2.2.2) for more!
-
-<p align="center">
-    <img width="960" src="https://github.com/user-attachments/assets/51e900ea-43c6-41ca-b255-8b7d59285b26" alt="version 2.2.2">
-</p>
-
-`2.2.0` update:
-
-- [OpenAI Realtime API](https://deepchat.dev/docs/directConnection/OpenAI/OpenAIRealtime) for Speech to Speech communication
-- [Focus mode](https://deepchat.dev/docs/modes#focusMode) to only display the latest message exchanges and provide a modern AI Chatbot experience
-- [Custom buttons](https://deepchat.dev/docs/styles/buttons#customButtons)
-- A [Response](https://deepchat.dev/docs/connect#Response) can now have multiple messages
-- Ability to connect to [Readable Stream APIs](https://deepchat.dev/docs/connect#Stream)
-- See [release notes](https://github.com/OvidijusParsiunas/deep-chat/releases/tag/2.2.0) for more!
-
-<p align="center">
-    <img width="1000" src="https://github.com/user-attachments/assets/6089a0b4-0fe6-43e9-b9ce-840a9cfda885" alt="version 2.2.0">
-</p>
-
 ### :computer: Getting started
 
 ```
 npm install deep-chat
 ```
 
-If using React, install the following instead:
+If using React, install the [following](https://www.npmjs.com/package/deep-chat-react) instead:
 
 ```
 npm install deep-chat-react
@@ -92,7 +42,7 @@ Simply add the following to your markup:
 <deep-chat></deep-chat>
 ```
 
-The exact syntax for the above will vary depending on the framework of your choice ([see here](https://deepchat.dev/examples/frameworks)).
+The exact syntax for the above example will vary depending on the framework of your choice ([see here](https://deepchat.dev/examples/frameworks)).
 
 ### :computer: Install with AI
 
@@ -104,12 +54,12 @@ Use the [llms.txt](https://github.com/OvidijusParsiunas/deep-chat/blob/main/llms
 
 ### :zap: Connect
 
-![Connect](./assets/readme/connect.png)
+![Connect](https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/assets/readme/connect.png)
 
-Connecting to a service is simple, all you need to do is define its API details using the [`request`](https://deepchat.dev/docs/connect#request) property:
+Connecting to a service is simple, all you need to do is define its API details using the [`connect`](https://deepchat.dev/docs/connect#connect-1) property:
 
 ```
-<deep-chat request='{"url":"https://service.com/chat"}'/>
+<deep-chat connect='{"url":"https://service.com/chat"}'/>
 ```
 
 The service will need to be able to handle request and response formats used in Deep Chat. Please read the [Connect](https://deepchat.dev/docs/connect) section in documentation and check out the [server template](https://deepchat.dev/examples/servers) examples.
@@ -118,7 +68,7 @@ Alternatively, if you want to connect without changing the target service, use t
 
 ### :electric_plug: Direct connection
 
-![Direct connection](./assets/readme/direct-connect.png)
+![Direct connection](https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/assets/readme/direct-connect.png)
 
 Connect to popular AI APIs directly from the browser via the use of the [`directConnection`](https://deepchat.dev/docs/directConnection/#directConnection) property:
 
@@ -144,7 +94,7 @@ Simply add the [deep-chat-web-llm](https://deepchat.dev/examples/externalModules
 
 ### :camera: :microphone: Camera and Microphone
 
-![Capture](./assets/readme/capture.png)
+![Capture](https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/assets/readme/capture.png)
 
 Use Deep Chat to capture photos with your webcam and record audio with the microphone. You can enable this using the [`camera`](https://deepchat.dev/docs/files#camera) and [`microphone`](https://deepchat.dev/docs/files#microphone) properties:
 
@@ -166,15 +116,15 @@ Input text with your voice using Speech To Text capabilities and have the respon
 
 Check out live codepen examples for your [UI framework/library](https://deepchat.dev/examples/frameworks) of choice:
 
-| React                                                                                                                                                   | Vue 2                                                                                                                                                   | Vue 3                                                                                                                                                | Svelte                                                                                                                                                       | SvelteKit                                                                                                                                                                                               | Angular                                                                                                                                                                             | Solid                                                                                                                                                   | Next                                                                                                                                  | Nuxt                                                                                                                                                 | VanillaJS                                                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://stackblitz.com/edit/deep-chat-react?file=src%2FApp.tsx" target="_blank"><img src="./website/static/img/reactLogo.png" width="60"/></a> | <a href="https://codesandbox.io/s/deep-chat-vue2-cdqpt2?file=/src/App.vue" target="_blank"><img src="./website/static/img/vueLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/deep-chat-vue3?file=src%2FApp.vue" target="_blank"><img src="./website/static/img/vueLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/deep-chat-svelte?file=src%2FApp.svelte" target="_blank"><img src="./website/static/img/svelteLogo.png" width="45"/></a> | <div align="center"><a href="https://stackblitz.com/edit/deep-chat-sveltekit?file=src%2Froutes%2F%2Bpage.svelte" target="_blank" ><img src="./website/static/img/svelteLogo.png" width="45"/></a></div> | <a href="https://stackblitz.com/edit/stackblitz-starters-7gygrp?file=src%2Fapp%2Fapp.component.ts" target="_blank"><img src="./website/static/img/angularLogo.png" width="66"/></a> | <a href="https://stackblitz.com/edit/deep-chat-solid?file=src%2FApp.tsx" target="_blank"><img src="./website/static/img/solidLogo.png" width="60"/></a> | <a href="https://deepchat.dev/examples/frameworks#next" target="_blank"><img src="./website/static/img/nextLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/nuxt-starter-vwz6pg?file=app.vue" target="_blank"><img src="./website/static/img/nuxtLogo.png" width="70"/></a> | <a href="https://codesandbox.io/s/deep-chat-vanillajs-v2ywnv?file=/index.html" target="_blank"><img src="./website/static/img/vanillaJSLogo.png" width="60"/></a> |
+| React                                                                                                                                                                                                                    | Vue 2                                                                                                                                                                                                                    | Vue 3                                                                                                                                                                                                                 | Svelte                                                                                                                                                                                                                        | SvelteKit                                                                                                                                                                                                                                                                | Angular                                                                                                                                                                                                                                              | Solid                                                                                                                                                                                                                    | Next                                                                                                                                                                                                   | Nuxt                                                                                                                                                                                                                  | VanillaJS                                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://stackblitz.com/edit/deep-chat-react?file=src%2FApp.tsx" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/reactLogo.png" width="60"/></a> | <a href="https://codesandbox.io/s/deep-chat-vue2-cdqpt2?file=/src/App.vue" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/vueLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/deep-chat-vue3?file=src%2FApp.vue" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/vueLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/deep-chat-svelte?file=src%2FApp.svelte" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/svelteLogo.png" width="45"/></a> | <div align="center"><a href="https://stackblitz.com/edit/deep-chat-sveltekit?file=src%2Froutes%2F%2Bpage.svelte" target="_blank" ><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/svelteLogo.png" width="45"/></a></div> | <a href="https://stackblitz.com/edit/stackblitz-starters-7gygrp?file=src%2Fapp%2Fapp.component.ts" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/angularLogo.png" width="66"/></a> | <a href="https://stackblitz.com/edit/deep-chat-solid?file=src%2FApp.tsx" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/solidLogo.png" width="60"/></a> | <a href="https://deepchat.dev/examples/frameworks#next" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/nextLogo.png" width="60"/></a> | <a href="https://stackblitz.com/edit/nuxt-starter-vwz6pg?file=app.vue" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/nuxtLogo.png" width="70"/></a> | <a href="https://codesandbox.io/s/deep-chat-vanillajs-v2ywnv?file=/index.html" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/vanillaJSLogo.png" width="60"/></a> |
 
 Setting up your own server has never been easier with the following [server templates](https://deepchat.dev/examples/servers). From creating your own service to establishing proxies for other APIs such as OpenAI, everything has been documented with clear examples to get you up and running in seconds:
 
-| Express                                                                                                                                                                          | Nest                                                                                                                                                                         | Flask                                                                                                                                                                          | Spring                                                                                                                                                                                 | Go                                                                                                                                                                | SvelteKit                                                                                                                                                                                               | Next                                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/node/express" target="_blank"><img src="./website/static/img/expressLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/node/nestjs" target="_blank"><img src="./website/static/img/nestLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/python/flask" target="_blank"><img src="./website/static/img/flaskLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/java/springboot" target="_blank"><img src="./website/static/img/springBootLogo.png" width="50"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/go" target="_blank"><img src="./website/static/img/goLogo.png" width="40"/></a> | <div align="center"><a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/sveltekit" target="_blank" ><img src="./website/static/img/svelteLogo.png" width="45"/></a></div> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/nextjs" target="_blank"><img src="./website/static/img/nextLogo.png" width="55"/></a> |
+| Express                                                                                                                                                                                                                                           | Nest                                                                                                                                                                                                                                          | Flask                                                                                                                                                                                                                                           | Spring                                                                                                                                                                                                                                                  | Go                                                                                                                                                                                                                                 | SvelteKit                                                                                                                                                                                                                                                                | Next                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/node/express" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/expressLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/node/nestjs" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/nestLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/python/flask" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/flaskLogo.png" width="60"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/java/springboot" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/springBootLogo.png" width="50"/></a> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/go" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/goLogo.png" width="40"/></a> | <div align="center"><a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/sveltekit" target="_blank" ><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/svelteLogo.png" width="45"/></a></div> | <a href="https://github.com/OvidijusParsiunas/deep-chat/tree/main/example-servers/nextjs" target="_blank"><img src="https://raw.githubusercontent.com/OvidijusParsiunas/deep-chat/HEAD/website/static/img/nextLogo.png" width="55"/></a> |
 
 All examples are ready to be deployed on a hosting platform such as [Vercel](https://vercel.com/).
 
@@ -188,19 +138,27 @@ Demo videos are available on [YouTube](https://www.youtube.com/@ovi-il4rg/videos
     </a>
 </p>
 
-## :joystick: Playground
+## :construction_worker: To create your own Deep Chat component
 
-Create, configure and use Deep Chat components without writing any code in the official [Playground](https://deepchat.dev/playground)!
+```
+# Clone the project locally (optionally use --depth 1 for quicker download):
+$ git clone --depth 1 https://github.com/OvidijusParsiunas/deep-chat.git
 
-<p align="center">
-    <img width="750" src="https://github.com/OvidijusParsiunas/deep-chat/assets/18709577/57ab8d3f-defe-40f3-a0af-451f6159bbb2" alt="Playground">
-</p>
+# Navigate to the /src directory and install node dependencies:
+$ npm install
 
-:tada: <b>Update</b> - components can now be stretched to full screen dimensions using the new <b>Expanded View</b>:
+# Build the component:
+$ npm run build
 
-<p align="center">
-    <img width="750" src="https://github.com/OvidijusParsiunas/deep-chat/assets/18709577/6b78907c-c4c2-44de-b4c7-d73c1e887fa8" alt="Expanded View">
-</p>
+# Automatically build the component as soon as you make a change:
+$ npm run build:watch
+
+# Serve the component locally (from index.html):
+$ npm run start
+
+# Bundle the component into a single file (dist/deepChat.bundle.js):
+$ npm run build:bundle
+```
 
 ## :heart: Contributions
 
