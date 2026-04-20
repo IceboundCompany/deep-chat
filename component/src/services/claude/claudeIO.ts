@@ -1,7 +1,7 @@
 import {DEFINE_FUNCTION_HANDLER, FUNCTION_TOOL_RESPONSE_STRUCTURE_ERROR} from '../../utils/errorMessages/errorMessages';
 import {AUTHENTICATION_ERROR_PREFIX, INVALID_REQUEST_ERROR_PREFIX, OBJECT} from '../utils/serviceConstants';
 import {CLAUDE_BUILD_HEADERS, CLAUDE_BUILD_KEY_VERIFICATION_DETAILS} from './utils/claudeUtils';
-import {ClaudeContent, ClaudeMessage, ClaudeRequestBody} from '../../types/claudeInternal';
+import {ClaudeContent, ClaudeMessage, ClaudeRequestBody, ClaudeSystemContent} from '../../types/claudeInternal';
 import {ClaudeResult, ClaudeTextContent, ClaudeToolUse} from '../../types/claudeResult';
 import {DirectConnection} from '../../types/directConnection';
 import {MessageContentI} from '../../types/messagesInternal';
@@ -34,6 +34,8 @@ export class ClaudeIO extends DirectServiceIO {
   permittedErrorPrefixes = [AUTHENTICATION_ERROR_PREFIX, INVALID_REQUEST_ERROR_PREFIX];
   private _streamToolCalls: ClaudeToolUse = {[TYPE]: 'tool_use', id: '', name: '', input: ''};
 
+  private _cacheControl?: {type: string};
+
   constructor(deepChat: DeepChat) {
     const directConnectionCopy = DEEP_COPY(deepChat.directConnection) as DirectConnection;
     const config = directConnectionCopy.claude as Claude & APIKey;
@@ -43,6 +45,10 @@ export class ClaudeIO extends DirectServiceIO {
       if (chatConfig.custom_base_url) {
         this.url = chatConfig.custom_base_url;
         delete chatConfig.custom_base_url;
+      }
+      if (chatConfig.cache_control) {
+        this._cacheControl = chatConfig.cache_control;
+        delete chatConfig.cache_control;
       }
       this.completeConfig(config, (deepChat.directConnection?.claude as ClaudeChat)?.function_handler);
     }
@@ -72,7 +78,11 @@ export class ClaudeIO extends DirectServiceIO {
 
     bodyCopy.messages = processedMessages;
     if (this.systemMessage) {
-      bodyCopy.system = this.systemMessage;
+      if (this._cacheControl) {
+        bodyCopy.system = [{type: TEXT, text: this.systemMessage, cache_control: this._cacheControl}] as ClaudeSystemContent[];
+      } else {
+        bodyCopy.system = this.systemMessage;
+      }
     }
     return bodyCopy;
   }
