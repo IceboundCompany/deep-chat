@@ -36,6 +36,9 @@ export interface ClaudeChat {
     };
     function_handler?: ChatFunctionHandler;
     mcp_servers?: ClaudeMCPServer[];
+    cache_control?: {
+        type: string;
+    };
 }
 export type Claude = true | ClaudeChat;
 //# sourceMappingURL=claude.d.ts.map

@@ -11,6 +11,7 @@ export declare class ClaudeIO extends DirectServiceIO {
     url: string;
     permittedErrorPrefixes: string[];
     private _streamToolCalls;
+    private _cacheControl?;
     constructor(deepChat: DeepChat);
     private static getFileContent;
     private preprocessBody;

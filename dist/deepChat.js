@@ -7920,7 +7920,7 @@ class li extends k {
     const n = C(e.directConnection).claude;
     if (super(e, Gd(), $d, n), this.insertKeyPlaceholderText = this.genereteAPIKeyName("Claude"), this.keyHelpUrl = "https://console.anthropic.com/settings/keys", this.url = "https://api.anthropic.com/v1/messages", this.permittedErrorPrefixes = [Te, it], this._streamToolCalls = { [E]: "tool_use", id: "", name: "", input: "" }, typeof n === U) {
       const c = n;
-      c.custom_base_url && (this.url = c.custom_base_url, delete c.custom_base_url), this.completeConfig(n, (r = (s = e.directConnection) == null ? void 0 : s.claude) == null ? void 0 : r.function_handler);
+      c.custom_base_url && (this.url = c.custom_base_url, delete c.custom_base_url), c.cache_control && (this._cacheControl = c.cache_control, delete c.cache_control), this.completeConfig(n, (r = (s = e.directConnection) == null ? void 0 : s.claude) == null ? void 0 : r.function_handler);
     }
     this.maxMessages ?? (this.maxMessages = -1), (o = this.rawBody).model ?? (o.model = "claude-sonnet-4-5-20250929"), (a = this.rawBody).max_tokens ?? (a.max_tokens = 4096);
   }
@@ -7939,7 +7939,7 @@ class li extends k {
       content: li.getTextWFilesContent(r, li.getFileContent),
       [x]: k.getRoleViaUser(r[x])
     }));
-    return n.messages = s, this.systemMessage && (n.system = this.systemMessage), n;
+    return n.messages = s, this.systemMessage && (this._cacheControl ? n.system = [{ type: h, text: this.systemMessage, cache_control: this._cacheControl }] : n.system = this.systemMessage), n;
   }
   async callServiceAPI(e, t) {
     this.messages ?? (this.messages = e), this.callDirectServiceServiceAPI(e, t, this.preprocessBody.bind(this), {});
