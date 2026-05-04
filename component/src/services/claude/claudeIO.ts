@@ -39,6 +39,11 @@ export class ClaudeIO extends DirectServiceIO {
     const config = directConnectionCopy.claude as Claude & APIKey;
     super(deepChat, CLAUDE_BUILD_KEY_VERIFICATION_DETAILS(), CLAUDE_BUILD_HEADERS, config);
     if (typeof config === OBJECT) {
+      const chatConfig = config as ClaudeChat & APIKey;
+      if (chatConfig.custom_base_url) {
+        this.url = chatConfig.custom_base_url;
+        delete chatConfig.custom_base_url;
+      }
       this.completeConfig(config, (deepChat.directConnection?.claude as ClaudeChat)?.function_handler);
     }
     this.maxMessages ??= -1;
