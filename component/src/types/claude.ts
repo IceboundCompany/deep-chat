@@ -25,6 +25,7 @@ export interface ClaudeMCPServer {
 
 // https://docs.anthropic.com/en/api/messages
 export interface ClaudeChat {
+  custom_base_url?: string;
   model?: string;
   max_tokens?: number;
   temperature?: number;
