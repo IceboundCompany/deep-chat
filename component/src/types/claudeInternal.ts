@@ -1,4 +1,4 @@
-import {ClaudeTool, ClaudeMCPServer} from './claude';
+import {ClaudeTool, ClaudeMCPServer, ClaudeCacheControl} from './claude';
 import {ClaudeTextContent} from './claudeResult';
 
 type ClaudeImageContent = {
@@ -26,4 +26,5 @@ export type ClaudeRequestBody = {
   tools?: ClaudeTool[];
   tool_choice?: 'auto' | 'any' | {type: 'tool'; name: string} | {type: 'function'; name: string};
   mcp_servers?: ClaudeMCPServer[];
+  cache_control?: ClaudeCacheControl;
 };

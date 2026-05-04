@@ -60,7 +60,7 @@ export class ClaudeIO extends DirectServiceIO {
 
     bodyCopy.messages = processedMessages;
     if (this.systemMessage) {
-      bodyCopy.system = this.systemMessage;
+	  bodyCopy.system = this.systemMessage;
     }
     return bodyCopy;
   }
